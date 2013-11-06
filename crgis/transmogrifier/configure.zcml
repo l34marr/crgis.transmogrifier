@@ -1,0 +1,28 @@
+<configure
+  xmlns="http://namespaces.zope.org/zope"
+  xmlns:five="http://namespaces.zope.org/five"
+  xmlns:i18n="http://namespaces.zope.org/i18n"
+  xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+  xmlns:transmogrifier="http://namespaces.plone.org/transmogrifier"
+  i18n_domain="crgis.transmogrifier">
+
+  <five:registerPackage package="." initialize=".initialize" />
+
+  <genericsetup:registerProfile
+    name="default"
+    title="CRGIS Transmogrifier Package"
+    directory="profiles/default"
+    description="CRGIS Transmogrifier Package Extension Profile"
+    provides="Products.GenericSetup.interfaces.EXTENSION"
+    />
+
+  <include package="collective.transmogrifier" />
+  <include package="collective.transmogrifier" file="meta.zcml" />
+  <transmogrifier:registerConfig
+    name="crgis.transmogrifier.custom"
+    title="CRGIS Transmogrifier Config"
+    description="Transmogrifier Pipeline Config to Import/Export Contents."
+    configuration="custom.cfg"
+    />
+  
+</configure>

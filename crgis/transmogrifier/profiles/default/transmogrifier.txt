@@ -1,0 +1,3 @@
+# this file contains transmogrifier profile names to run
+# on GenericSetup transmogrifier's step
+crgis.transmogrifier.custom
